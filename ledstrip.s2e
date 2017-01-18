@@ -1,0 +1,72 @@
+{	
+	"extensionName": "ledstrip",
+	"description": "A ledstrip Extension for Arduino",
+	"version": "1.1",
+	"author": "Ted Lien(ted99.tw@gmail.com)",
+	"homepage": "http://mearm.weebly.com",
+	"sort":0,
+	"javascriptURL":"js/ledstrip.js",
+  	"firmware":"1.1",
+  	"extensionPort":0,
+	"blockSpecs": [
+		[
+			"w",
+			"digitalWrite( %n , %d.digital )",
+			"digitalWrite",
+			"13",
+			"HIGH",
+			{
+				"setup":"pinMode({0},OUTPUT); \n",
+				"inc":"",
+				"def":"",
+				"work":"digitalWrite({0},{1});\n",
+				"loop":""
+			}
+		],
+		[
+			"w",
+			"ledStrip pin %n qty %n %d.mode R%n G%n B%n",
+			"ledStrip",
+			"8",
+			"60",
+			"singleColor",
+			"255",
+			"255",
+			"255",
+			{
+				"setup":"",
+				"inc":"#include \"ledstrip.h\"\n",
+				"def":"LEDSTRIP ledstrip({0}, {1});\n",
+				"work":"ledstrip.runFunction({2},{3},{4},{5});",
+				"loop":""
+			}
+		]
+	],
+	"menus": {
+		"digital":["HIGH","LOW"],
+		"mode":["singleColor","breathe","marquee","rainbow","rainbowmarquee"]
+	},
+	"values":{
+		"HIGH":1,
+		"LOW":0,
+		"singleColor":0,
+		"breathe":1,
+		"marquee":2,
+		"rainbow":3,
+		"rainbowmarquee":4
+	},
+	"translators":{
+		"zh_CN":{
+			"HIGH":"高电平",
+			"LOW":"低电平",
+			"digitalWrite( %n , %d.digital )":"数字口输出( %n ,%d.digital )",
+			"ledStrip pin %n qty %n %d.mode R%n G%n B%n":"灯条 接脚 %n 颗数%n 花样%d.mode 红色%n 绿色%n 蓝色%n"
+		},
+		"zh_TW":{
+			"HIGH":"高電位",
+			"LOW":"低電位",
+			"digitalWrite( %n , %d.digital )":"數位輸出( %n ,%d.digital )",
+			"ledStrip pin %n qty %n %d.mode R%n G%n B%n":"燈條 接腳 %n 顆數%n 花樣%d.mode 紅色%n 綠色%n 藍色%n"
+		}
+	}
+}
