@@ -1,5 +1,6 @@
 # ledstrip
 an extension for mBlock based on Adafruit Neopixel library handling WS2812 like ic
+
 usage : 
 ledStrip pin %n qty %n %d.mode R%n G%n B%n
 灯条 接脚 %n 颗数%n 花样%d.mode 红色%n 绿色%n 蓝色%n
